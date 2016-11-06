@@ -4,22 +4,22 @@ Simple Facebook Graph Tool built with Vue.js + Vueify + Pug (former Jade) + Styl
 # Usage
 Make sure you have gulp installed:
 ```sh
-$ npm install -g gulp
+npm install -g gulp
 ```
 Clone repo, install dependencies, build assets and start the server:
 ```sh
-$ git clone https://github.com/automagically/fb-search.git && cd fb-search
-$ npm install
-$ gulp
-$ npm run serve
+git clone https://github.com/automagically/fb-search.git && cd fb-search
+npm install
+gulp
+npm run serve
 ```
 Watch files while developing:
 ```sh
-$ gulp watch
+gulp watch
 ```
 On production environment run (minifying assets):
 ```sh
-$ gulp --production
+gulp --production
 ```
 # License
 FB Search is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
