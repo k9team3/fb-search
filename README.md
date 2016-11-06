@@ -1,4 +1,4 @@
-![Demo](https://raw.githubusercontent.com/automagically/fb-search/master/src/common/images/demo.gif)
+![Demo](https://github.com/automagically/fb-search/blob/d61ce79b1c4735ed6adde69bf018d9443e8bd705/src/common/images/demo.gif)
 # FB Search
 Simple Facebook Graph Tool built with Vue.js + Vueify + Pug (former Jade) + Stylus + Coffee + Browserify.
 # Usage
