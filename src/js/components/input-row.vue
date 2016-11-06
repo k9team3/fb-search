@@ -166,10 +166,7 @@ module.exports =
         @value = @locatedAt
       if(value == 'liked_by')
         @value = @byFilter
-      row =
-        type: value
-        value: @value
-      @.$emit('updateRow', row)
+      @.$emit('updateRow', { type: value, value: @value })
     about: (value) ->
       @updateValue(value)
     aboutEcom: (value) ->
@@ -188,10 +185,7 @@ module.exports =
     remove: (index) ->
       @.$emit('remove', @state)
     updateValue: (value) ->
-      row = 
-        type: @state.type
-        value: value
-      @.$emit('updateRow', row)
+      @.$emit('updateRow', { type: @state.type, value: value })
 </script>
 
 <style lang="stylus">

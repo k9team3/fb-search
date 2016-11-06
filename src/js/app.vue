@@ -1,18 +1,18 @@
 <template lang="pug">
-section
-  #InputRows: .container
-    input-row(
-      v-for="(row, index) in rowsSorted" 
-      v-bind:state="row"
-      @updateRow="update(index, $event)"
-      @remove="remove(index, $event)"
-    )
-  .container
+section: .container
+  form(v-on:submit="search")
+    #InputRows
+      input-row(
+        v-for="(row, index) in rowsSorted" 
+        v-bind:state="row"
+        @updateRow="update(index, $event)"
+        @remove="remove(index, $event)"
+      )
     p.clearfix
-      button.btn.btn-default.btn-lg.btn-add.pull-right(v-on:click="add('OR')") OR
-      button.btn.btn-default.btn-lg.btn-add.pull-right(v-on:click="add('AND')") AND
+      a.btn.btn-default.btn-lg.btn-add.pull-right(v-on:click="add('OR')") OR
+      a.btn.btn-default.btn-lg.btn-add.pull-right(v-on:click="add('AND')") AND
     p.clearfix
-      button.btn.btn-primary.btn-lg.pull-right(v-on:click="search" v-bind:disabled="!hasInput") Search Facebook
+      button.btn.btn-primary.btn-lg.pull-right(type="submit" v-bind:disabled="!hasInput") Search Facebook
 </template>
 
 <script lang="coffee">
@@ -52,8 +52,10 @@ module.exports =
           return -1
         (textA < textB) ? -1 : (textA > textB) ? 1 : 0
   methods:
-    search: ->
-      window.open "https://www.facebook.com/search#{@query}"
+    search: (e) ->
+      e.preventDefault()
+      if(@hasInput)
+        window.open "https://www.facebook.com/search#{@query}"
     prepareField: (row) ->
       query = ''    
       if row.value != ''
@@ -77,7 +79,7 @@ module.exports =
         value: ''
         condition: condition
     remove: (index, event) ->
-      @rows.splice(index,1)
+      @rows.splice(index, 1)
     update: (index, event) ->
       @rows[index].type = event.type
       @rows[index].value = event.value
