@@ -8,7 +8,7 @@ npm install -g gulp
 ```
 Clone repo, install dependencies, build assets and start the server:
 ```sh
-git clone https://github.com/automagically/fb-search.git && cd fb-search
+git clone https://github.com/automagically/fb-search.git && cd $_
 npm install
 gulp
 npm run serve
