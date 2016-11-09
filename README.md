@@ -11,7 +11,7 @@ Clone repo, install dependencies, build assets and start the server:
 git clone https://github.com/dylansuwito/fb-search.git && cd fb-search
 npm install
 gulp
-npm run serve
+npm start 
 ```
 Watch files while developing:
 ```sh
